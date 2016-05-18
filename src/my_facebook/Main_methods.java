@@ -48,7 +48,7 @@ public class Main_methods {
         ResponseList<Post> feed = face.getHome();
     }
 
-    public void team() throws FacebookException{
+    public void tema() throws FacebookException{
         ResponseList<Post> results = face.searchPosts("LOL");
     }
 
