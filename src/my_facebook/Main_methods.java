@@ -10,50 +10,59 @@ import java.net.URL;
  * @author julian
  */
 public class Main_methods {
-    /*
-    Creamos objeto de clase facebook
-    */
+    /**
+     * Creamos un obj de la clase facebook 
+     */
     Facebook face = new FacebookFactory().getInstance();
 
     
-    /*
-    Para añadir un nuevo estado.
-    */
+    /**
+     * Para poner un nuevo estado
+     * @throws FacebookException 
+     */
     public void Post() throws FacebookException{    
    face.postStatusMessage("Hola");}
     
-   /*
-    Para postear una imagen 
-    */
-    
+  
+    /**
+     * Para postear una imagen
+     * @throws MalformedURLException
+     * @throws FacebookException 
+     */
     public void Postimg() throws MalformedURLException, FacebookException{
      face.postLink(new URL("https://www.facebook.com/julian.mosquera.31/posts/864374793666574"));
     }
     
-    /*
-    Le damos a me gusta a un post con tal de añadir la ID
-    */
+    /**
+     * Metodo para darle like a mi post
+     * @throws FacebookException 
+     */
     
     public void like() throws FacebookException{
         face.likePost("864374793666574");
     }
-    /*
-    Comenta una un post
-    */
-    
+   
+    /**
+     * comentar una foto
+     * @throws FacebookException 
+     */
    public void Comentar() throws FacebookException{
         face.commentPhoto("851466124957441","probando cliente");
     }
 
-    /*
-    Metodo para coger la feed de los ultimos estados de tus amigos
-    */
+    /**
+     * Metodo para coger la feed de los ultimos estados de tus amigos
+     * @throws FacebookException 
+     */
+    
+    
     public void feed() throws FacebookException{
         ResponseList<Post> feed = face.getHome();
     }
 
-    /*
-    Buscamos un usuario
+   /**
+    * Buscamos un tema en concreto
+    * @throws FacebookException 
     */
     public void tema() throws FacebookException{
         ResponseList<User> results = face.searchUsers("Rubn Srz");
